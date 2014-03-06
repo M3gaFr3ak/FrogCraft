@@ -1,0 +1,16 @@
+[
+{
+  "modid": "frogcraft",
+  "name": "FrogCraft",
+  "description": "",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://forum.industrial-craft.net/index.php?page=Thread&threadID=9458",
+  "updateUrl": "",
+  "authors": ["RikkaO_O", "M3gaFr3ak"],
+  "credits": "RikkaO_O",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["IC2", "gregtech_addon"]
+}
+]
