@@ -9,7 +9,6 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.fluids.*;
 
-import FrogCraft.mod_FrogCraft;
 import FrogCraft.Common.*;
 
 public class TileEntityLiquifier extends BaseIC2Machine implements ISidedInventory,IFluidHandler{

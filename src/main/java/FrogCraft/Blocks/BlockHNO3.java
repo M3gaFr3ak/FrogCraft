@@ -35,7 +35,7 @@ public class BlockHNO3 extends BlockFluidClassic{
 	public Icon flowIcon;
 	public BlockHNO3(int id) {
 		super(id, FluidManager.getFluid("hno3").getFluid(), Material.water);
-		//setCreativeTab(mod_FrogCraft.tabFrogCraft );
+		//setCreativeTab(Frogcraft.tabFrogCraft );
 		
 	}
 	

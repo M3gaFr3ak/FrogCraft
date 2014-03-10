@@ -2,7 +2,7 @@ package FrogCraft.Items.MobilePS;
 
 import java.util.Random;
 
-import FrogCraft.mod_FrogCraft;
+import FrogCraft.Frogcraft;
 import FrogCraft.api.fcItems;
 
 import cpw.mods.fml.relauncher.Side;
@@ -11,13 +11,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -60,14 +56,14 @@ public class BlockMobilePS extends BlockContainer{
     		}
     	}
     		
-        return iconBuffer[mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][3]];
+        return iconBuffer[Frogcraft.sideAndFacingToSpriteOffset[blockSide][3]];
     }
     
     @SideOnly(Side.CLIENT)
     @Override
     public Icon getIcon(int blockSide, int blockMeta)
     {
-    	return iconBuffer[mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][3]];
+    	return iconBuffer[Frogcraft.sideAndFacingToSpriteOffset[blockSide][3]];
     }
     
     @SideOnly(Side.CLIENT)
@@ -117,7 +113,7 @@ public class BlockMobilePS extends BlockContainer{
         }
         else if(((player.getCurrentEquippedItem() != null)&&(player.getCurrentEquippedItem().itemID != ic2.api.item.Items.getItem("ecMeter").itemID))|(player.getCurrentEquippedItem() == null))
         {
-        	player.openGui(FrogCraft.mod_FrogCraft.instance, 0, world, x, y, z);
+        	player.openGui(Frogcraft.instance, 0, world, x, y, z);
         	return true;
         }
         return false;

@@ -3,9 +3,9 @@ package FrogCraft.Machines;
 import FrogCraft.Common.FluidManager;
 import FrogCraft.Common.SidedIC2Machine;
 import FrogCraft.CommonProxy;
+import FrogCraft.Frogcraft;
 import FrogCraft.Machines.IndustrialDevices.*;
 import FrogCraft.api.fcItems;
-import FrogCraft.mod_FrogCraft;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
@@ -289,7 +289,7 @@ public class BlockMachines extends BlockContainer
 		{
 			if ((new CommonProxy()).getServerGuiElement(0, entityPlayer, world, x, y, z) != null)
 			{
-				entityPlayer.openGui(FrogCraft.mod_FrogCraft.instance, 0, world, x, y, z);
+				entityPlayer.openGui(Frogcraft.instance, 0, world, x, y, z);
 				return true;
 			}
 		}
@@ -400,7 +400,7 @@ public class BlockMachines extends BlockContainer
 		int blockMeta = world.getBlockMetadata(x, y, z);
 		SidedIC2Machine te = (SidedIC2Machine) world.getBlockTileEntity(x, y, z);
 
-		int ico = mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][te.facing];
+		int ico = Frogcraft.sideAndFacingToSpriteOffset[blockSide][te.facing];
 
 		if (te instanceof TileEntityIndustrialDevice | te instanceof TileEntityThermalCracker | te instanceof TileEntityAdvanceChemicalReactor | te instanceof TileEntityLiquifier)
 
@@ -414,7 +414,7 @@ public class BlockMachines extends BlockContainer
 	@Override
 	public Icon getIcon(int blockSide, int blockMeta)
 	{
-		return iconBuffer[blockMeta][mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][3]];
+		return iconBuffer[blockMeta][Frogcraft.sideAndFacingToSpriteOffset[blockSide][3]];
 	}
 
 }

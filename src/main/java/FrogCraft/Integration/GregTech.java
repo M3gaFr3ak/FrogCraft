@@ -1,8 +1,8 @@
 package FrogCraft.Integration;
 
-import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Loader;
 import gregtechmod.api.util.GT_Recipe;
+import net.minecraft.item.ItemStack;
 
 public class GregTech
 {
@@ -45,7 +45,12 @@ public class GregTech
 		return getGregTechItem(4, amount, damage);
 	}
 
-	/** Return:{output,itntStackSize,cosumedInput} */
+	/**
+	 * Find an implosion compressor recipe corresponding to the input
+	 *
+	 * @param in input ItemStack
+	 * @return {@link Object[]} holding the output, the amount of ITNT and the amount of input items
+	 * */
 	public static Object[] findImplosionRecipe(ItemStack in)
 	{
 		if (!isGTLoaded)
@@ -55,14 +60,16 @@ public class GregTech
 		for (GT_Recipe recipe : GT_Recipe.sImplosionRecipes)
 		{
 			if (recipe.getRepresentativeInput1().isItemEqual(in) && recipe.getRepresentativeInput2().isItemEqual(sampleITNT))
+			{
 				g = recipe;
-			break;
+				break;
+			}
 		}
 		if (g == null)
 			return null;
 
 		return new Object[]
-		{ g.getOutput(1), g.getOutput(2).stackSize, g.getRepresentativeInput1().stackSize };
+		{ g.getOutput(1), g.getRepresentativeInput1().stackSize, g.getRepresentativeInput1().stackSize };
 	}
 
 	private static ItemStack getGregTechItem(int type, int amount, int damage)

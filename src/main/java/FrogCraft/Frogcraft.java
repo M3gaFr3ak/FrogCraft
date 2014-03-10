@@ -36,17 +36,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = "mod_FrogCraft", name = "FrogCraft", version = "162.1.6.2", dependencies = "required-after:IC2; after:gregtech_addon")
+@Mod(modid = "Frogcraft", name = "FrogCraft", dependencies = "required-after:IC2; after:gregtech_addon")
 @NetworkMod(channels =
-{ "mod_FrogCraft" }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
-public class mod_FrogCraft
+{ "frogcraft" }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
+public class Frogcraft
 {
 	@SidedProxy(clientSide = "FrogCraft.ClientProxy", serverSide = "FrogCraft.CommonProxy")
 	public static CommonProxy proxy;
 
 	/** Instance of FrogCraft */
-	@Instance("mod_FrogCraft")
-	public static mod_FrogCraft instance;
+	@Instance("frogcraft")
+	public static Frogcraft instance;
 
 	/** Instance of all frogcraft achievements */
 	public static Achievements fcAchievements;

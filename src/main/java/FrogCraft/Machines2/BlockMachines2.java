@@ -3,10 +3,10 @@ package FrogCraft.Machines2;
 import FrogCraft.Common.BaseIC2Machine;
 import FrogCraft.Common.SidedIC2Machine;
 import FrogCraft.CommonProxy;
+import FrogCraft.Frogcraft;
 import FrogCraft.Machines2.ACWindMill.TileEntityACWindMillBase;
 import FrogCraft.Machines2.ACWindMill.TileEntityACWindMillTop;
 import FrogCraft.api.fcItems;
-import FrogCraft.mod_FrogCraft;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.energy.event.EnergyTileUnloadEvent;
@@ -190,7 +190,7 @@ public class BlockMachines2 extends BlockContainer {
         //if (te instanceof TileEntityACWindMillTop){
         //	if (((TileEntityACWindMillTop)te).settled){
         //		((TileEntityACWindMillTop)te).settled=false;
-        //		dropBlockAsItem_do(world,x,y,z,new ItemStack(mod_FrogCraft.Fan,1));
+        //		dropBlockAsItem_do(world,x,y,z,new ItemStack(Frogcraft.Fan,1));
         //		return true;
         //	}
         //}
@@ -215,7 +215,7 @@ public class BlockMachines2 extends BlockContainer {
         else if(((entityPlayer.getCurrentEquippedItem() != null)&&(entityPlayer.getCurrentEquippedItem().itemID != ic2.api.item.Items.getItem("ecMeter").itemID))|(entityPlayer.getCurrentEquippedItem() == null))
         {
         	if ((new CommonProxy()).getServerGuiElement(0, entityPlayer, world, x, y, z) != null){
-        		entityPlayer.openGui(FrogCraft.mod_FrogCraft.instance, 0, world, x, y, z);
+        		entityPlayer.openGui(Frogcraft.instance, 0, world, x, y, z);
         	    return true;
         	}
         }
@@ -324,19 +324,19 @@ public class BlockMachines2 extends BlockContainer {
         TileEntity te=world.getBlockTileEntity(x, y, z);
         
         if (!(te instanceof SidedIC2Machine))
-        	return iconBuffer[blockMeta][mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][3]];
+        	return iconBuffer[blockMeta][Frogcraft.sideAndFacingToSpriteOffset[blockSide][3]];
         
         if(te instanceof TileEntityCombustionFurnace&&((TileEntityCombustionFurnace)te).isWorking())
-        	return iconBuffer[blockMeta][mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][((SidedIC2Machine)te).facing]+6];
+        	return iconBuffer[blockMeta][Frogcraft.sideAndFacingToSpriteOffset[blockSide][((SidedIC2Machine)te).facing]+6];
         
-        return iconBuffer[blockMeta][mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][((SidedIC2Machine)te).facing]];
+        return iconBuffer[blockMeta][Frogcraft.sideAndFacingToSpriteOffset[blockSide][((SidedIC2Machine)te).facing]];
     }
     
     @SideOnly(Side.CLIENT)
     @Override
     public Icon getIcon(int blockSide, int blockMeta)
     {
-        return iconBuffer[blockMeta][mod_FrogCraft.sideAndFacingToSpriteOffset[blockSide][3]];
+        return iconBuffer[blockMeta][Frogcraft.sideAndFacingToSpriteOffset[blockSide][3]];
     }    
     
   //This will tell minecraft not to render any side of our cube.

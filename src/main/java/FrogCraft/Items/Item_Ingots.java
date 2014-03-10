@@ -1,7 +1,7 @@
 package FrogCraft.Items;
 
 import FrogCraft.api.fcItems;
-import FrogCraft.mod_FrogCraft;
+import FrogCraft.Frogcraft;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 import cpw.mods.fml.relauncher.Side;
@@ -30,7 +30,7 @@ public class Item_Ingots extends Item
 			int block = entityItem.worldObj.getBlockId((int) entityItem.posX, (int) (entityItem.posY + 0.4), (int) entityItem.posZ);
 			if (block == Block.waterStill.blockID | block == Block.waterMoving.blockID | block == Block.waterlily.blockID)
 			{
-				mod_FrogCraft.fcAchievements.achieved(entityItem.worldObj.getClosestPlayer(entityItem.posX, entityItem.posY, entityItem.posZ, -1), "killed_by_Potassium");
+				Frogcraft.fcAchievements.achieved(entityItem.worldObj.getClosestPlayer(entityItem.posX, entityItem.posY, entityItem.posZ, -1), "killed_by_Potassium");
 				entityItem.hurtResistantTime = 40;
 				if (!entityItem.worldObj.isRemote)
 				{
@@ -41,7 +41,7 @@ public class Item_Ingots extends Item
 
 			if (block == fcItems.BlockHNO3.blockID)
 			{
-				mod_FrogCraft.fcAchievements.achieved(entityItem.worldObj.getClosestPlayer(entityItem.posX, entityItem.posY, entityItem.posZ, -1), "suicideExpert");
+				Frogcraft.fcAchievements.achieved(entityItem.worldObj.getClosestPlayer(entityItem.posX, entityItem.posY, entityItem.posZ, -1), "suicideExpert");
 				entityItem.hurtResistantTime = 40;
 				if (!entityItem.worldObj.isRemote)
 				{
