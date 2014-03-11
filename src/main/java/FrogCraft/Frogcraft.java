@@ -36,7 +36,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = "Frogcraft", name = "FrogCraft", dependencies = "required-after:IC2; after:gregtech_addon")
+@Mod(modid = "frogcraft", name = "FrogCraft", dependencies = "required-after:IC2; after:gregtech_addon")
 @NetworkMod(channels =
 { "frogcraft" }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class Frogcraft

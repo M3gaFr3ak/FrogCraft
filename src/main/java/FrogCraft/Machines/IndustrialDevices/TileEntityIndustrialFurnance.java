@@ -12,19 +12,24 @@ public class TileEntityIndustrialFurnance extends TileEntityIndustrialDevice
 	@Override
 	public List<ItemStack> getResult(ItemStack inv[], int i)
 	{
+		if (inv == null)
+			return Lists.newArrayList();
 		if (inv[i] == null)
-			return null;
-		ItemStack r = FurnaceRecipes.smelting().getSmeltingResult(inv[i]);
-		if (r != null)
-			inv[i].stackSize -= 1;
-		return Lists.newArrayList(r);
+			return Lists.newArrayList();
+		ItemStack outputFor = FurnaceRecipes.smelting().getSmeltingResult(inv[i].copy());
+		if (outputFor == null)
+			return Lists.newArrayList();
+		return Lists.newArrayList(outputFor);
 	}
 
 	@Override
 	public List<ItemStack> getResult(ItemStack i)
 	{
 		if (i == null)
-			return null;
-		return Lists.newArrayList(FurnaceRecipes.smelting().getSmeltingResult(i.copy()));
+			return Lists.newArrayList();
+		ItemStack outputFor = FurnaceRecipes.smelting().getSmeltingResult(i.copy());
+		if (outputFor == null)
+			return Lists.newArrayList();
+		return Lists.newArrayList(outputFor);
 	}
 }
