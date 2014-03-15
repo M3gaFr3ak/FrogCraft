@@ -122,7 +122,6 @@ public class GT_RecipeRegistrator {
 	 * @param aBackSmelting allows to reverse smelt into aMat (false for Gems)
 	 * @param aBackMacerating allows to reverse macerate into aOutput
 	 */
-	@SuppressWarnings("null") // And again it is too stupid to get, that it can't be null at that point...
 	public static void registerUsagesForMaterials(ItemStack aMat, ItemStack aOutput, String aPlate, boolean aBackSmelting, boolean aBackMacerating, boolean aRecipeReplacing) {
 		if (aMat == null || aOutput == null) return;
 		aMat = GT_Utility.copy(aMat);

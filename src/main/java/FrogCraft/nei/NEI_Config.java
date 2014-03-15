@@ -2,12 +2,15 @@ package FrogCraft.nei;
 
 import codechicken.nei.api.IConfigureNEI;
 
-public class NEIModule implements IConfigureNEI {
+public class NEI_Config implements IConfigureNEI {
 
 	@Override
 	public void loadConfig() {
-		//TODO Machine RecipeHandlers
-		
+		new AdvancedChemicalReactorRecipeHandler();
+		new ThermalCrackerRecipeHandler();
+		new CondenseTowerRecipeHandler();
+		new LiquifierRecipeHandler();
+		new CombustionFurnaceRecipeHandler();		
 	}
 
 	@Override
@@ -17,7 +20,6 @@ public class NEIModule implements IConfigureNEI {
 
 	@Override
 	public String getVersion() {
-
 		return "1.0";
 	}
 
